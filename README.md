@@ -13,9 +13,7 @@
 
 ## ⚙️ 설치 및 설정 과정
 
-### Python 라이브러리 설치
-
-프로젝트에 필요한 Python 라이브러리들을 설치합니다. 가상 환경을 사용하는 것을 권장합니다.
+프로젝트에 필요한 라이브러리들을 설치합니다. 가상 환경을 사용하는 것을 권장합니다.
 
 ```bash
 # 가상 환경 생성 (선택 사항이지만 권장)
@@ -24,17 +22,26 @@ python -m venv venv
 .\venv\Scripts\activate
 # 가상 환경 활성화 (macOS/Linux)
 source venv/bin/activate
+```
 
-# easyocr과 의존성 라이브러리 설치
+### easyocr 설치
+
+`easyocr`은 GPU를 활용할 수 있으며, 다국어 지원이 강력한 사용자 친화적인 OCR 라이브러리입니다.
+
+```bash
 pip install easyocr
+```
+**참고:** GPU를 사용하려면 추가적인 설정이 필요할 수 있습니다. 자세한 내용은 `easyocr` 공식 문서를 참조하십시오.
 
-# pytesseract 설치
+### pytesseract 및 Tesseract-OCR 엔진 설치
+
+`pytesseract`는 Google의 Tesseract OCR 엔진을 Python에서 사용할 수 있도록 하는 래퍼(wrapper) 라이브러리입니다. `pytesseract`를 사용하려면 Tesseract 엔진이 시스템에 별도로 설치되어 있어야 합니다.
+
+```bash
 pip install pytesseract
 ```
 
-### Tesseract-OCR 엔진 설치 (pytesseract 사용 시 필수)
-
-`pytesseract`는 Tesseract 엔진이 시스템에 별도로 설치되어 있어야 합니다.
+**Tesseract-OCR 엔진 설치 (필수):**
 
 -  **Windows:** [Tesseract 공식 설치 프로그램](https://github.com/UB-Mannheim/tesseract/wiki)을 다운로드하여 설치합니다.
    -  설치 과정에서 **"Add Tesseract to the system PATH"** 옵션을 반드시 체크하는 것이 좋습니다. 이렇게 하면 스크립트에서 Tesseract 실행 파일의 경로를 직접 지정할 필요가 없어집니다.
@@ -54,6 +61,7 @@ pip install pytesseract
    sudo apt install tesseract-ocr
    sudo apt install tesseract-ocr-kor tesseract-ocr-eng # 한국어, 영어 언어팩 설치
    ```
+
 
 ### 설치 과정에서 발생할 수 있는 문제 및 해결
 
